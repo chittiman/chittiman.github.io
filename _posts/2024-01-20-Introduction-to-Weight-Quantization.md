@@ -1,3 +1,11 @@
+---
+layout: post
+title: Introduction to Weight Quantization
+categories: [Quantization, data]
+---
+
+
+
 <a href="https://colab.research.google.com/github/mlabonne/llm-course/blob/main/Introduction_to_Weight_Quantization.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Introduction to Weight Quantization
