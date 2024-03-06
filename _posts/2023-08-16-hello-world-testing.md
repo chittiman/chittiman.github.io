@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Hello World
+title: Hello World Today 278
 categories: [testing, Hello World]
-permalink: /hello-world-testing/
 ---
+<!---permalink: /hello-world-testing/-->
+
 
 Hello and welcome. The only purpose of this post is to greet you when your site comes alive for the first time.  
 This post will demonstrate some of the more common content & elements found in posts.  
