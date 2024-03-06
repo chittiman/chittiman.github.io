@@ -2,6 +2,7 @@
 layout: post
 title: Hello World
 categories: [testing, Hello World]
+permalink: /hello-world-testing/
 ---
 
 Hello and welcome. The only purpose of this post is to greet you when your site comes alive for the first time.  
