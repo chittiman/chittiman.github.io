@@ -109,6 +109,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - nb_to_md.py
   - _notebooks/
 
 # Robots are welcome
