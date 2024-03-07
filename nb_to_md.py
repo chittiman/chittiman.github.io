@@ -22,6 +22,8 @@ def convert_nb_md(args):
     new_img_dir = imgs_dir / img_dir.name
     if img_dir.exists():
         img_dir.rename(new_img_dir)
+    else:
+        new_img_dir.mkdir(exist_ok=True)
 
     md_file = nb_dir / f'{file_prefix}.md'
     clean_md_name = re.sub(r'[\s_]', '-',md_file.name).lower()
