@@ -109,6 +109,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - _notebooks/
 
 # Robots are welcome
 include:
