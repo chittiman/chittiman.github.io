@@ -101,7 +101,7 @@ categories: [{cat_str}]
 ## Step 5 - Fixing Image Paths: ##
 
 
-As we move both the image folder and markdown files, it's crucial to correct the image paths inside the markdown file. Using a simple regex function, we insert **{{site.baseurl}}/assets/image/** behind the previous path to ensure accurate referencing.
+As we move both the image folder and markdown files, it's crucial to correct the image paths inside the markdown file. Using a simple regex function, we insert **{{site.baseurl}}/assets/image/** behind the previous path to ensure accurate referencing. Basically, you extract the text before path and path itself as two separate groups and insert the prefix in between.
 
 
 ```python
