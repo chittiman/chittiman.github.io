@@ -18,10 +18,9 @@ Maithili, spoken in Bihar and Nepal, is linguistically related to Hindi, while K
 
 ## Encoder-Decoder Primer
 
-[High-level explanation of encoder-decoder architecture:
-- Why this architecture is fundamental for NMT
-- Basic intuition behind how it works
-- Why understanding this helps explain your technical choices]
+Neural machine translation relies on the encoder-decoder architecture, where an encoder module processes the input text in the source language and captures its semantic essence in vector form - essentially creating a numerical representation of the meaning. This encoded representation is then passed to the decoder module, which generates the translation in the target language through conditional next-token prediction, building the output one word at a time based on what it has already generated and the source encoding. Put simply, the encoder focuses on understanding meaning, while the decoder focuses on expressing that meaning in a new language.
+
+The human parallel is striking: just as we can understand broken speech but struggle to speak fluently in a new language, encoders tolerate noise better than decoders. This creates an important asymmetry for low-resource NMT - source-side imperfections are manageable, but target-side noise directly degrades generation quality and makes pattern learning harder. Understanding this trade-off became central to our approach for Maithili and Konkani. Let's see how these insights shaped our methodology.
 
 ## Key Methods: Tagged Back-translation & Cross-lingual Transfer
 
