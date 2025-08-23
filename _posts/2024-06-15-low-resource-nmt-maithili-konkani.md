@@ -12,10 +12,9 @@ Building effective neural translation models typically requires massive parallel
 
 ## Problem Setup
 
-[Explain why Maithili/Konkani are particularly challenging for NMT:
-- Limited parallel data availability
-- Linguistic characteristics
-- Technical challenges in building effective models]
+To understand the scale of our challenge, consider the data landscape for English translation pairs: German has around 50 million sentence pairs, Hindi has roughly 5 million, while Tamil and Telugu have around 500,000 each. Assamese, already considered low-resource, has about 50,000 pairs. In comparison, Konkani had 5,000 parallel sentences available, and Maithili had 500.
+
+Maithili, spoken in Bihar and Nepal, is linguistically related to Hindi, while Konkani, used in Goa and coastal areas, is connected to Marathi. These relationships offered potential for transfer learning. But the lack of native speakers internally, reliable benchmarks, and clean parallel data added challenges. However, all languages used Devanagari script, simplifying preprocessing. Before diving into our methods, it's worth understanding the encoder-decoder architecture that underlies modern NMT.
 
 ## Encoder-Decoder Primer
 
