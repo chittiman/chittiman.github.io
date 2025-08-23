@@ -8,7 +8,7 @@ tags: [nmt, low-resource-languages, cross-lingual-transfer, back-translation, ma
 
 ## Introduction
 
-[Your introduction here - briefly introduce the challenge of NMT for extremely low-resource languages like Maithili and Konkani]
+Building effective neural translation models typically requires massive parallel datasets - a luxury most of the world's languages simply don't have. When the Indian Parliament initiated translation of proceedings into 22 regional languages, Maithili and Konkani presented the most fascinating challenge. With existing models barely scraping 0.3 BLEU scores, these extremely low-resource languages seemed nearly impossible to crack. By creating synthetic datasets and leveraging cross-lingual relationships, we pushed performance to 9.5+ BLEU - achieving state-of-the-art results with minimal resources. But why exactly were these languages so challenging to begin with?
 
 ## Problem Setup
 
