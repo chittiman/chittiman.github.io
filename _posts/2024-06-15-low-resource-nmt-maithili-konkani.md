@@ -24,11 +24,17 @@ The human parallel is striking: just as we can understand broken speech but stru
 
 ## Key Methods: Tagged Back-translation & Cross-lingual Transfer
 
-[General concepts and theory:
-- What is tagged back-translation and why it's effective
-- Cross-lingual transfer learning principles
-- How neighboring languages (Hindi/Marathi) can help
-- Synthetic data creation rationale]
+Extreme data scarcity pushes us toward creative solutions in low-resource NMT. Two techniques that become essential are tagged back-translation and cross-lingual transfer. We'll examine these methods in general first to establish a clear foundation.
+
+### Tagged Back-translation
+
+Most parallel training data for translation comes from government documents, news articles, and published books - sources that inherently favor formal, literary language. This creates a fundamental mismatch with user expectations. Consider the difference:
+
+Source: "The meeting will commence at 10 AM"
+Formal: "बैठक सुबह 10 बजे आरंभ होगी" (using formal "आरंभ")  
+Casual: "मीटिंग 10 बजे शुरू होगी" (using casual "मीटिंग" and "शुरू")
+
+The challenge becomes: how do we create training data that reflects casual language use?
 
 ## Adapting Techniques to Extreme Low-resource Settings
 
