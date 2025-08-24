@@ -57,6 +57,22 @@ Directed output: `<cas>` "ट्रेन लेट हो गई है" (casua
 
 The model learns to associate `<cas>` with natural, conversational Hindi while producing more formal translations when no style control is applied.
 
+### Cross-lingual Transfer
+
+Cross-lingual transfer leverages the linguistic relationships between related languages through joint training. Consider training a single model on both Hindi and Marathi data simultaneously. Despite being distinct languages, they share significant commonalities - overlapping vocabulary (पानी/पाणी for water), similar grammatical structures, and common root forms. During joint training, the model discovers these shared patterns and learns representations that benefit both languages, with the lower-resource language typically gaining more from this knowledge transfer. This works because related languages exist in overlapping semantic spaces, allowing the model to exploit commonalities for improved performance.
+
+In practice, joint training uses language-specific target tags. Training data looks like this:
+
+Training examples:
+"I am going to school" → `<hi>` "मैं स्कूल जा रहा हूँ"
+"I am going to school" → `<mr>` "मी शाळेत जात आहे"
+
+At inference, we control the target language by prefilling with the appropriate tag:
+
+Input: "The weather is nice today"
+Directed output (Hindi): `<hi>` "आज मौसम अच्छा है"
+Directed output (Marathi): `<mr>` "आज हवामान चांगले आहे"
+
 ## Adapting Techniques to Extreme Low-resource Settings
 
 [Real-world implementation challenges and solutions:
