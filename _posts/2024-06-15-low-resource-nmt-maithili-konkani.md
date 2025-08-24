@@ -38,6 +38,25 @@ The challenge becomes: how do we create training data that reflects casual langu
 
 The solution lies in leveraging movie subtitles, which naturally contain casual, conversational language. We take existing Hindi subtitle data and reverse-translate it back to English using a trained Hindi-English model, creating synthetic English-Hindi pairs that preserve the casual tone. However, this synthetic data requires careful filtering to maintain quality. We apply several heuristics: removing exact duplicates, filtering out sentences that are too long, and eliminating pairs where the length ratio between source and target falls outside acceptable thresholds. This process yields a filtered dataset of casual-toned parallel data.
 
+The next challenge is teaching the model to use this synthetic data effectively. Without guidance, the model cannot distinguish between original formal data and synthetic casual data during training, potentially learning confused representations that blend both styles. Tags solve this communication problem by explicitly signaling the data's nature and intended output style. We add `<bt>` tokens to warn the model that the source may be noisy due to back-translation artifacts - essentially telling it to be more tolerant of potential errors on the input side. Meanwhile, `<cas>` tokens indicate the target should use conversational language. During training, the model learns these associations: `<bt>` signals "expect possible noise in source, be forgiving" while `<cas>` signals "generate in casual style." This aligns with our earlier insight about encoder-decoder asymmetry - we can afford to be more tolerant on the source side while maintaining precision in generation. This allows us to control both noise handling and output tone at inference time.
+
+Here's how this works in practice. During training, tagged data looks like this:
+
+Training examples:
+`<bt>` "I will reach there by 5 PM" → `<cas>` "मैं 5 बजे तक वहां पहुंच जाऊंगा"
+`<bt>` "Please send me the documents today" → `<cas>` "आज मुझे डॉक्यूमेंट भेज देना"
+
+At inference time, we control the output style by prefilling the first token:
+
+Inference examples:
+Input: "The train is delayed"
+Output: "रेलगाड़ी में देरी हुई है" (formal, no prefill)
+
+Input: "The train is delayed"
+Directed output: `<cas>` "ट्रेन लेट हो गई है" (casual, with `<cas>` prefill)
+
+The model learns to associate `<cas>` with natural, conversational Hindi while producing more formal translations when no style control is applied.
+
 ## Adapting Techniques to Extreme Low-resource Settings
 
 [Real-world implementation challenges and solutions:
