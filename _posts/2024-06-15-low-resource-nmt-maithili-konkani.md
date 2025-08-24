@@ -36,6 +36,8 @@ Casual: "मीटिंग 10 बजे शुरू होगी" (using casua
 
 The challenge becomes: how do we create training data that reflects casual language use?
 
+The solution lies in leveraging movie subtitles, which naturally contain casual, conversational language. We take existing Hindi subtitle data and reverse-translate it back to English using a trained Hindi-English model, creating synthetic English-Hindi pairs that preserve the casual tone. However, this synthetic data requires careful filtering to maintain quality. We apply several heuristics: removing exact duplicates, filtering out sentences that are too long, and eliminating pairs where the length ratio between source and target falls outside acceptable thresholds. This process yields a filtered dataset of casual-toned parallel data.
+
 ## Adapting Techniques to Extreme Low-resource Settings
 
 [Real-world implementation challenges and solutions:
