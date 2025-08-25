@@ -73,21 +73,37 @@ Input: "The weather is nice today"
 Directed output (Hindi): `<hi>` "आज मौसम अच्छा है"
 Directed output (Marathi): `<mr>` "आज हवामान चांगले आहे"
 
+These techniques form the foundation of our approach. Now let's explore how we adapted them to tackle the extreme challenges of Maithili and Konkani translation.
+
 ## Adapting Techniques to Extreme Low-resource Settings
 
-[Real-world implementation challenges and solutions:
-- Specific difficulties you encountered with Maithili/Konkani
-- How you adapted the general techniques
-- Creative solutions you developed
-- Decision-making process for your approach]
+Applying these techniques to Maithili reveals a fundamental challenge. Traditional cross-lingual transfer requires sufficient English-target language parallel data for joint training, yet we only had 500 English-Maithili sentence pairs. Tagged back-translation presents an even thornier problem: it requires a reverse translation model (Maithili-English) to generate synthetic data, but training such a model demands the very parallel data we lack. This creates a circular dependency - we need substantial parallel data to build the tools that help us work with limited parallel data.
+
+The breakthrough came from recognizing that Maithili and Hindi share deep linguistic connections - both use Devanagari script, have similar grammatical structures, and many common root words. This suggested we could treat Maithili as 'noisy Hindi' for computational purposes. If a Hindi-English model could reasonably understand Maithili text as imperfect Hindi, it could back-translate it to English. We scraped monolingual Maithili content from news websites and used our existing Hindi-English model to reverse-translate it, creating synthetic English-Maithili pairs that preserved the natural Maithili language patterns.
+
+This gave us three distinct data types for joint training, each with specific tagging strategies. The Hindi dataset was orders of magnitude larger than our Maithili data:
+
+• English-Hindi pairs (clean, large dataset):
+Source: "The weather is nice today"  
+Target: `<hi>` "आज मौसम अच्छा है"
+
+• English-Maithili pairs (original 500 sentences):
+Source: "The weather is nice today"
+Target: `<mai>` "आजक मौसम नीक अछि"
+
+• English-Maithili pairs (back-translated from scraped news):
+Source: `<bt>` "The weather is nice today"
+Target: `<mai>` "आजक मौसम नीक अछि"
+
+This combination allowed us to leverage Hindi's abundant data while teaching the model to handle potentially noisy inputs and learn Maithili generation patterns.
+
+Given the massive imbalance between Hindi and Maithili data volumes, we employed oversampling to ensure adequate Maithili representation during training. We structured batches so that Maithili sentence pairs constituted a significant minority of each batch, preventing the model from being overwhelmed by Hindi examples. After initial joint training, we experimented with fine-tuning exclusively on Maithili data for additional steps, but observed no significant performance improvements. This suggested that the joint training approach had already effectively captured the cross-lingual patterns, and additional Maithili-only training provided diminishing returns.
 
 ## Results & Insights
 
-[Your SOTA achievement and key learnings:
-- Quantitative results and improvements
-- What worked better than expected
-- Surprising findings
-- Lessons learned from the process]
+We evaluated our approach on the [Flores-200](https://github.com/facebookresearch/flores/tree/main/flores200) dataset, a commonly used benchmarking dataset for multilingual neural machine translation. Our model achieved 9.5+ BLEU scores for English-Maithili translation, representing a dramatic improvement from the 0.3 BLEU baseline of existing approaches. At the time of our work, no dedicated open-source or commercial models existed for these language pairs, making this a clear state-of-the-art achievement for extremely low-resource translation.
+
+Two insights proved particularly valuable for practitioners working with similar constraints. First, treating linguistically related low-resource languages as 'noisy' versions of their higher-resource relatives enables creative workarounds for data scarcity - our Hindi-Maithili approach could readily extend to other language pairs with similar relationships. Second, strategic oversampling ensures the model encounters low-resource language pairs in every batch during joint training, preventing it from being overwhelmed by high-resource examples and maintaining adequate representation for minority languages even with extreme data imbalances.
 
 ## Takeaways
 
