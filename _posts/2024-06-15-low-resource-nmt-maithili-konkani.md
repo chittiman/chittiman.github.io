@@ -105,15 +105,6 @@ We evaluated our approach on the [Flores-200](https://github.com/facebookresearc
 
 Two insights proved particularly valuable for practitioners working with similar constraints. First, treating linguistically related low-resource languages as 'noisy' versions of their higher-resource relatives enables creative workarounds for data scarcity - our Hindi-Maithili approach could readily extend to other language pairs with similar relationships. Second, strategic oversampling ensures the model encounters low-resource language pairs in every batch during joint training, preventing it from being overwhelmed by high-resource examples and maintaining adequate representation for minority languages even with extreme data imbalances.
 
-## Takeaways
+## Conclusion
 
-[What practitioners can apply:
-- Key principles for low-resource NMT
-- When to use these techniques
-- Practical advice for similar projects]
-
-[Optional 1-2 sentences about social impact and language preservation]
-
----
-
-*This work demonstrates that with creative application of existing techniques, we can build effective NMT systems even for extremely low-resource languages, opening doors for digital inclusion of underrepresented linguistic communities.*
+Building NMT models for extremely low-resource languages requires creative problem-solving when traditional approaches fall short. By treating Maithili as 'noisy Hindi' and Konkani as 'noisy Marathi,' then combining tagged back-translation with cross-lingual transfer, we transformed an intractable challenge into an engineering solution. These techniques provide a practical roadmap for other underrepresented language pairs, demonstrating that innovative application of existing methods can achieve meaningful results even with just hundreds of parallel sentences.
