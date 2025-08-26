@@ -1,0 +1,82 @@
+<svg width="800" height="550" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="550" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">
+    Training Data Format
+  </text>
+  
+  <!-- Source Column Header -->
+  <text x="200" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">
+    Source (English)
+  </text>
+  
+  <!-- Target Column Header -->
+  <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">
+    Target
+  </text>
+  
+  <!-- Divider line -->
+  <line x1="400" y1="80" x2="400" y2="510" stroke="#d1d5db" stroke-width="2"/>
+  
+  <!-- English-Hindi group block -->
+  <rect x="30" y="85" width="340" height="95" fill="none" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="45" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e40af">English-Hindi Pairs</text>
+  
+  <rect x="430" y="85" width="340" height="95" fill="none" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="445" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e40af">Hindi Targets</text>
+  
+  <!-- English-Hindi pairs (blue) -->
+  <rect x="50" y="115" width="300" height="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="5"/>
+  <text x="60" y="130" font-family="Monaco, monospace" font-size="11" fill="#1e40af">"The weather is nice today"</text>
+  
+  <rect x="450" y="115" width="300" height="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="5"/>
+  <text x="460" y="130" font-family="Monaco, monospace" font-size="11" fill="#1e40af">&lt;hi&gt; "आज मौसम अच्छा है"</text>
+  
+  <rect x="50" y="150" width="300" height="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="5"/>
+  <text x="60" y="165" font-family="Monaco, monospace" font-size="11" fill="#1e40af">"I love reading books"</text>
+  
+  <rect x="450" y="150" width="300" height="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="5"/>
+  <text x="460" y="165" font-family="Monaco, monospace" font-size="11" fill="#1e40af">&lt;hi&gt; "मुझे किताबें पढ़ना पसंद है"</text>
+  
+  <!-- English-Maithili original group block -->
+  <rect x="30" y="195" width="340" height="95" fill="none" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="45" y="215" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400e">English-Maithili Original</text>
+  
+  <rect x="430" y="195" width="340" height="95" fill="none" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="445" y="215" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400e">Maithili Targets</text>
+  
+  <!-- English-Maithili original pairs (orange) -->
+  <rect x="50" y="225" width="300" height="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="5"/>
+  <text x="60" y="240" font-family="Monaco, monospace" font-size="11" fill="#92400e">"The weather is nice today"</text>
+  
+  <rect x="450" y="225" width="300" height="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="5"/>
+  <text x="460" y="240" font-family="Monaco, monospace" font-size="11" fill="#92400e">&lt;mai&gt; "आजक मौसम नीक अछि"</text>
+  
+  <rect x="50" y="260" width="300" height="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="5"/>
+  <text x="60" y="275" font-family="Monaco, monospace" font-size="11" fill="#92400e">"I love reading books"</text>
+  
+  <rect x="450" y="260" width="300" height="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="5"/>
+  <text x="460" y="275" font-family="Monaco, monospace" font-size="11" fill="#92400e">&lt;mai&gt; "हमरा किताब पढ़ब नीक लागैत अछि"</text>
+  
+  <!-- Back-translated group block -->
+  <rect x="30" y="305" width="340" height="95" fill="none" stroke="#ef4444" stroke-width="2" rx="8"/>
+  <text x="45" y="325" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">Back-translated Synthetic</text>
+  
+  <rect x="430" y="305" width="340" height="95" fill="none" stroke="#ef4444" stroke-width="2" rx="8"/>
+  <text x="445" y="325" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">Maithili Targets</text>
+  
+  <!-- Back-translated Maithili pairs (red) -->
+  <rect x="50" y="335" width="300" height="25" fill="#fecaca" stroke="#ef4444" stroke-width="1" rx="5"/>
+  <text x="60" y="350" font-family="Monaco, monospace" font-size="11" fill="#dc2626">&lt;bt&gt; "Weather today is nice"</text>
+  
+  <rect x="450" y="335" width="300" height="25" fill="#fecaca" stroke="#ef4444" stroke-width="1" rx="5"/>
+  <text x="460" y="350" font-family="Monaco, monospace" font-size="11" fill="#dc2626">&lt;mai&gt; "आजक मौसम नीक अछि"</text>
+  
+  <rect x="50" y="370" width="300" height="25" fill="#fecaca" stroke="#ef4444" stroke-width="1" rx="5"/>
+  <text x="60" y="385" font-family="Monaco, monospace" font-size="11" fill="#dc2626">&lt;bt&gt; "Books reading I love"</text>
+  
+  <rect x="450" y="370" width="300" height="25" fill="#fecaca" stroke="#ef4444" stroke-width="1" rx="5"/>
+  <text x="460" y="385" font-family="Monaco, monospace" font-size="11" fill="#dc2626">&lt;mai&gt; "हमरा किताब पढ़ब नीक लागैत अछि"</text>
+</svg>
