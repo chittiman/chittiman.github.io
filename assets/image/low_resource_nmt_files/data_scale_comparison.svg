@@ -1,0 +1,93 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333">
+    Parallel Data Availability for Neural Machine Translation
+  </text>
+  
+  <!-- Y-axis -->
+  <line x1="80" y1="60" x2="80" y2="420" stroke="#333" stroke-width="2"/>
+  
+  <!-- X-axis -->
+  <line x1="80" y1="420" x2="750" y2="420" stroke="#333" stroke-width="2"/>
+  
+  <!-- Y-axis labels -->
+  <text x="70" y="70" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">50M</text>
+  <text x="70" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">10M</text>
+  <text x="70" y="170" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">5M</text>
+  <text x="70" y="220" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">1M</text>
+  <text x="70" y="270" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">500K</text>
+  <text x="70" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">100K</text>
+  <text x="70" y="370" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">10K</text>
+  <text x="70" y="415" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666">1K</text>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="70" x2="750" y2="70" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="120" x2="750" y2="120" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="170" x2="750" y2="170" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="220" x2="750" y2="220" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="270" x2="750" y2="270" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="320" x2="750" y2="320" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="80" y1="370" x2="750" y2="370" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Bars -->
+  <!-- German: 50M -->
+  <rect x="110" y="70" width="80" height="350" fill="#2563eb" opacity="0.8"/>
+  <text x="150" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">German</text>
+  <text x="150" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">50M</text>
+  
+  <!-- Hindi: 5M -->
+  <rect x="210" y="170" width="80" height="250" fill="#dc2626" opacity="0.8"/>
+  <text x="250" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Hindi</text>
+  <text x="250" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">5M</text>
+  
+  <!-- Tamil: 500K -->
+  <rect x="310" y="270" width="80" height="150" fill="#ea580c" opacity="0.8"/>
+  <text x="350" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Tamil</text>
+  <text x="350" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">500K</text>
+  
+  <!-- Telugu: 500K -->
+  <rect x="410" y="270" width="80" height="150" fill="#ca8a04" opacity="0.8"/>
+  <text x="450" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Telugu</text>
+  <text x="450" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">500K</text>
+  
+  <!-- Assamese: 50K -->
+  <rect x="510" y="320" width="80" height="100" fill="#16a34a" opacity="0.8"/>
+  <text x="550" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Assamese</text>
+  <text x="550" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">50K</text>
+  
+  <!-- Konkani: 5K -->
+  <rect x="610" y="370" width="80" height="50" fill="#7c3aed" opacity="0.8"/>
+  <text x="650" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Konkani</text>
+  <text x="650" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">5K</text>
+  
+  <!-- Maithili: 500 -->
+  <rect x="710" y="415" width="30" height="5" fill="#be185d" opacity="0.8"/>
+  <text x="725" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">Maithili</text>
+  <text x="725" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">500</text>
+  
+  <!-- Y-axis title -->
+  <text x="25" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" transform="rotate(-90 25 240)">
+    Parallel Sentence Pairs
+  </text>
+  
+  <!-- X-axis title -->
+  <text x="415" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    Languages (English Translation Pairs)
+  </text>
+  
+  <!-- Legend -->
+  <text x="580" y="90" font-family="Arial, sans-serif" font-size="12" fill="#666">Data Scale:</text>
+  <rect x="580" y="100" width="15" height="15" fill="#2563eb" opacity="0.8"/>
+  <text x="600" y="112" font-family="Arial, sans-serif" font-size="11" fill="#666">High-resource (10M+)</text>
+  <rect x="580" y="120" width="15" height="15" fill="#dc2626" opacity="0.8"/>
+  <text x="600" y="132" font-family="Arial, sans-serif" font-size="11" fill="#666">Medium-resource (1M-10M)</text>
+  <rect x="580" y="140" width="15" height="15" fill="#ea580c" opacity="0.8"/>
+  <text x="600" y="152" font-family="Arial, sans-serif" font-size="11" fill="#666">Low-resource (100K-1M)</text>
+  <rect x="580" y="160" width="15" height="15" fill="#16a34a" opacity="0.8"/>
+  <text x="600" y="172" font-family="Arial, sans-serif" font-size="11" fill="#666">Very low-resource (10K-100K)</text>
+  <rect x="580" y="180" width="15" height="15" fill="#7c3aed" opacity="0.8"/>
+  <text x="600" y="192" font-family="Arial, sans-serif" font-size="11" fill="#666">Extremely low-resource (&lt;10K)</text>
+</svg>
